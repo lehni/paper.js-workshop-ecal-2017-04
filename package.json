@@ -1,0 +1,11 @@
+{
+  "name": "paper.js-workshop-ecal-spring-2017",
+  "version": "1.0.0",
+  "description": "Paper.js Workshop at ECAL (Spring 2017)",
+  "main": "index.js",
+  "repository": "https://github.com/lehni/paper.js-workshop-ecal-spring-2017",
+  "author": "Jürg Lehni <juerg@lehni.org> (http://juerglehni.com)",
+  "dependencies": {
+    "paper": "^0.11.2"
+  }
+}
