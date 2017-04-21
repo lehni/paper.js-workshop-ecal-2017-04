@@ -144,7 +144,16 @@ cd ~/Development
 git clone https://github.com/lehni/paper.js-workshop-ecal-2017-04
 ```
 
-This will take a moment as the Git files are downloaded onto your hard-drive.
+This will take a moment as the Git files are downloaded onto your hard-drive:
+
+```
+Cloning into 'paper.js-workshop-ecal-2017-04'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), done.
+```
+
 Now you can change into the directory, and install the NPM dependencies:
 
 ```sh
