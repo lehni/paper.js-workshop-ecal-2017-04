@@ -6,6 +6,15 @@
   "repository": "https://github.com/lehni/paper.js-workshop-ecal-spring-2017",
   "author": "Jürg Lehni <juerg@lehni.org> (http://juerglehni.com)",
   "dependencies": {
-    "paper": "^0.11.2"
+    "gsap": "^1.19.1",
+    "jquery": "^3.2.1",
+    "live-server": "^1.2.0",
+    "matter-js": "^0.12.0",
+    "paper": "^0.11.3",
+    "pathseg": "^1.0.2",
+    "poly-decomp": "^0.2.1"
+  },
+  "scripts": {
+    "server": "live-server ."
   }
 }

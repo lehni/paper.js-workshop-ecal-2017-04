@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tweeing with TweenMax.js</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/paper-full.js"></script>
+<script type="text/javascript" src="assets/js/TweenMax.js"></script>
+<script type="text/javascript" src="assets/js/paper-tween.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+var shape = new Shape.Rectangle({
+    from: [100, 100],
+    to: [200, 200],
+    fillColor: 'red',
+    scaling: [1, 4]
+});
+
+var tween1 = shape.tweenTo(1, {
+        rotation: 90,
+        ease: Power2.easeInOut
+    })
+    .yoyo(true)
+    .repeat(3)
+    // .pause()
+    .then(function(tween) {
+        console.log(this, tween)
+    });
+
+var tween2 = shape.tweenTo(2, {
+        position: [ 400, 400 ],
+        scaling: [4, 1],
+        fillColor: 'blue'
+    })
+    .yoyo(true)
+    .repeat(1)
+    .then(function(tween) {
+        // tween1.play();
+        console.log(this, tween);
+    });
+
+</script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>
