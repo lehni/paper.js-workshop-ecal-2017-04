@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interpolation</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+var svgH = 'M205.3,127h7.1v21.3h26.5V127h7.1v51.6h-7.1v-24.2h-26.5v24.2h-7.1 V127z';
+var pathH = PathItem.create(svgH);
+pathH.strokeColor = 'black';
+pathH.scale(4);
+
+pathH.position = view.center;
+
+function setWorm(path, start, length) {
+    path.dashArray = [length, path.length - length];
+    path.dashOffset = -start;
+}
+
+pathH.strokeWidth = 4;
+pathH.strokeCap = 'round';
+
+var start = 0;
+var start = 10;
+var inc = 2;
+
+pathH.onFrame = function() {
+    setWorm(pathH, start, length);
+    start += inc;
+    length += 1;
+}
+
+</script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interpolation</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+var rect = new Path.Rectangle({
+    center: [100, 100],
+    size: [100, 100],
+    strokeColor: 'black',
+    selected: true
+});
+
+rect.segments[0].selected = true;
+
+var circle = new Path.Circle({
+    center: [400, 100],
+    radius: 50,
+    strokeColor: 'black',
+    selected: true
+});
+
+
+circle.segments[0].selected = true;
+
+
+circle.rotate(-45);
+
+var morph = new Path({
+	strokeColor: 'red'
+});
+
+var amount = 0;
+var step = 0.01;
+
+morph.morphAmount = 0.5;
+
+view.onMouseMove = function(event) {
+    morph.morphAmount = event.point.x / view.size.width;
+}
+
+morph.onFrame = function(event) {
+	this.interpolate(rect, circle, this.morphAmount);
+}
+
+</script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>

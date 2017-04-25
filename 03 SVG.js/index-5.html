@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interpolation</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+project.importSVG('assets/svg/jazz.svg', function(svg) {
+    var path = svg.getItem({
+        class: Path
+    });
+
+    for (var pos = 0; pos < path.length; pos += 20) {
+        var point = path.getPointAt(pos);
+        new Path.Circle({
+            center: point,
+            radius: 10,
+            fillColor: 'red'
+        })
+    }
+});
+
+</script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>

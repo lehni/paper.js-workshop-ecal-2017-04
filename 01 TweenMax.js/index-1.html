@@ -25,10 +25,16 @@ shape.rotation = 180;
 //     ea;se: "easeOutElastic"
 // })
 
-var anim = item.tweenTo(1, {
-    rotation: '+=90',
-    ease: "easeOutElastic"
-})
+function createTween(item) {
+	var anim = item.tweenTo(1, {
+	    rotation: '+=5',
+	    ease: "easeOutElastic"
+	}).then(function() {
+		createTween(item);
+	})
+}
+
+createTween(shape);
 
 </script>
 </head>
