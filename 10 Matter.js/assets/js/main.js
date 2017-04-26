@@ -53,7 +53,7 @@ function addRectangle(x, y, w, h, isStatic) {
   var item = new Shape.Rectangle({
   	point: [x, y],
   	size: [w, h],
-    fillColor: new Color(Math.random(), Math.random(), Math.random(), 1)
+    fillColor: Color.random()
   });
   addBody(body, item);
 }
@@ -66,7 +66,7 @@ function addCircle(x, y, r, isStatic) {
   var item = new Shape.Circle({
     center: new Point(x, y),
     radius: r,
-    fillColor: new Color(Math.random(), Math.random(), Math.random(), 1)
+    fillColor: Color.random()
   });
   addBody(body, item);
 }

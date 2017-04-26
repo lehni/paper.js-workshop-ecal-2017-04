@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interpolation</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+project.importSVG('assets/svg/objects.svg', {
+    expandShapes: true,
+    onLoad: init
+});
+
+function init(svg) {
+    var object1 = svg.children['object1'];
+    var object2 = svg.children['object2'];
+    console.log(object1, object2);
+    object2.moveAbove(object1);
+    /*
+    project.activeLayer.addChild(object1);
+    project.activeLayer.addChild(object2);
+    svg.remove();
+    */
+}
+
+</script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>

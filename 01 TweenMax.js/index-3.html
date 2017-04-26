@@ -27,17 +27,19 @@ shape.rotation = 180;
 
 var anim1 = shape.tweenTo(1, {
     rotation: 90,
-    position: [400, 200],
+    position: [ shape.position.x + 400, 200],
     ease: "easeOutElastic"
 }).then(function() {
-	console.log('amin1 finit')
+	anim2.play();
 })
 
 var anim2 = shape.tweenTo(10, {
-    fillColor: 'blue',
+    fillColor: 'blue'
 }).then(function() {
 	console.log('amin2 finit')
 })
+
+anim2.pause();
 
 
 </script>
