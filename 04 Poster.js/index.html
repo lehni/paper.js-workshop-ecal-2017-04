@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Moving Posters</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+	new Path.Rectangle({
+		rectangle: view.bounds,
+		fillColor: 'red'
+	});
+
+	var circle  = new Path.Circle({
+		center: [0, 0],
+		radius: 100,
+		fillColor: 'black'
+	});
+
+	view.onMouseMove = function(event) {
+		circle.position = event.point;
+	}
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="1080" height="1620"></canvas>
+</body>
+</html>
